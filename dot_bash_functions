@@ -1,9 +1,9 @@
 # command to get the AWS IP address to the clipboard
 function getawsip {
-	echo "Retrieving IP address from https://checkip.amazonaws.com/"
-	AWSIP=$( curl -sf https://checkip.amazonaws.com/ )
-	echo "$AWSIP" | xclip -sel clip
-	echo "Action complete! AWS IP: $AWSIP saved to clipboard!"
+    echo "Retrieving IP address from https://checkip.amazonaws.com/"
+    AWSIP=$( curl -sf https://checkip.amazonaws.com/ )
+    echo "$AWSIP" | xclip -sel clip
+    echo "Action complete! AWS IP: $AWSIP saved to clipboard!"
 }
 
 # command to create directory and move to it
