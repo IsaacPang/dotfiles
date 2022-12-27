@@ -68,3 +68,6 @@ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
 
 # display only 2 deep directory on window title
 echo -ne "\033]0;${PWD/${PWD%*\/*\/*}\/}\007"
+
+# set ranger export
+export RANGER_LOAD_DEFAULT_RC=FALSE
