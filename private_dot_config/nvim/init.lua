@@ -1,6 +1,12 @@
 -- [[ Settings options ]]
 -- See `:help vim.o`
 
+-- Set tabs
+local set = vim.opt
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
