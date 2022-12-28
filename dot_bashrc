@@ -63,6 +63,11 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
+# login profile
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
 # swap escape with capslock
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
 
