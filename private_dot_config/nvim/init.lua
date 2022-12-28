@@ -8,6 +8,9 @@ set.softtabstop = 4
 set.shiftwidth = 4
 set.expandtab = true
 
+-- Set mouse
+set.mouse = nil
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
