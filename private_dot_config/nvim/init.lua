@@ -1,3 +1,6 @@
+-- [[ Plugins ]]
+require('plugins')
+
 -- [[ Settings options ]]
 -- See `:help vim.o`
 
