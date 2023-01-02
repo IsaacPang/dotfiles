@@ -14,6 +14,9 @@ set.expandtab = true
 -- Set mouse
 set.mouse = nil
 
+-- Set clipboard
+set.clipboard = 'unnamedplus'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -34,12 +37,13 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
+-- Set globals
+vim.g.python3_host_prog = '/usr/bin/python3'
 
 -- Set colorscheme
 -- USING KITTY COLORSCHEME
 -- vim.o.termguicolors = true
 -- vim.cmd [[colorscheme onedark]]
-
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as leader key
