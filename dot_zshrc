@@ -17,9 +17,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+## User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/Users/ispang/.local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -31,6 +32,7 @@ else
   export EDITOR='nvim'
 fi
 
+## Aliases
 # Example aliases
 alias zshconfig="chezmoi edit ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
