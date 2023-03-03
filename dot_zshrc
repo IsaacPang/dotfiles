@@ -32,6 +32,10 @@ else
   export EDITOR='nvim'
 fi
 
+# nvm commands
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 ## Aliases
 # Example aliases
 alias zshconfig="chezmoi edit ~/.zshrc"
