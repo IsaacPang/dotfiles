@@ -125,8 +125,9 @@ set.clipboard = 'unnamedplus'
 -- Set highlight on search
 set.hlsearch = false
 
--- Make line numbers default
+-- Make line numbers default and show relative numbers
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable break indent
 set.breakindent = true
@@ -141,6 +142,9 @@ set.smartcase = true
 -- Decrease update time
 set.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
+-- Set scrolloff
+set.scrolloff = 15
 
 -- Set globals
 vim.g.python3_host_prog = '/usr/bin/python3'
