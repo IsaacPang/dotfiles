@@ -97,7 +97,7 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border --
 
 # ranger function
 function ranger {
-    local IFS=$'\t\n'
+    # local IFS=$'\t\n'
     local tempfile="$(mktemp -t tmp.XXXXXX)"
     local ranger_cmd=(
         command
@@ -107,7 +107,7 @@ function ranger {
     
     ${ranger_cmd[@]} "$@"
     if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
-        cd -- "$(cat "$tempfile")"; clear || return
+        cd -- "$(cat "$tempfile")" || return
     fi
     command rm -f -- "$tempfile" 2>/dev/null
 }
