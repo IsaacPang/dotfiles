@@ -56,3 +56,5 @@ eval "$(pyenv init -)"
 ## deloitte proxies
 # export http_proxy="http://serverproxy.au.deloitte.com:80"
 # export https_proxy="http://serverproxy.au.deloitte.com:80"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
