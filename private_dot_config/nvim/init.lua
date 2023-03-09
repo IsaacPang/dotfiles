@@ -28,14 +28,14 @@ vim.keymap.set('n', '<C-p>', telebuiltin.find_files, {})
 vim.keymap.set('n', '<C-S-f>', telebuiltin.live_grep, {})
 vim.keymap.set('n', '<C-S-b>', telebuiltin.buffers, {})
 
+--------------------------------------------------
+-- Tree-sitter Setup
+--------------------------------------------------
 local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 if not status_ok then
   return
 end
 
---------------------------------------------------
--- Tree-sitter Setup
---------------------------------------------------
 -- See: https://github.com/nvim-treesitter/nvim-treesitter#quickstart
 nvim_treesitter.setup {
   -- A list of parser names, or "all"
