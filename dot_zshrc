@@ -57,4 +57,6 @@ eval "$(pyenv init -)"
 # export http_proxy="http://serverproxy.au.deloitte.com:80"
 # export https_proxy="http://serverproxy.au.deloitte.com:80"
 
+# fzf options
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border --margin=1 --padding=1"
