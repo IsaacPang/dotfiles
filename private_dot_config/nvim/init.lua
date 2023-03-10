@@ -147,7 +147,7 @@ vim.wo.signcolumn = 'yes'
 set.scrolloff = 15
 
 -- Set globals
-vim.g.python3_host_prog = '/usr/bin/python3'
+-- vim.g.python3_host_prog = '/usr/bin/python3'
 
 --------------------------------------------------
 -- Basic Keymaps
