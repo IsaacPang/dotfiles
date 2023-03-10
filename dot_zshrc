@@ -39,15 +39,6 @@ fi
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-## Aliases
-# Example aliases
-alias zshconfig="chezmoi edit ~/.zshrc"
-alias ohmyzsh="cd ~/.oh-my-zsh"
-
-# User defined aliases
-alias python="python3"
-alias pip="pip3"
-
 # pyenv env vars
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -77,3 +68,13 @@ function ranger {
     fi
     command rm -f -- "$tempfile" 2>/dev/null
 }
+
+## Aliases
+# Example aliases
+alias zshconfig="chezmoi edit ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
+
+# User defined aliases
+alias python="python3"
+alias pip="pip3"
+
