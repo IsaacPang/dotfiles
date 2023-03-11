@@ -109,12 +109,9 @@ cmp.setup {
 --------------------------------------------------
 -- Settings options
 --------------------------------------------------
--- Set tabs
 local set = vim.opt
+-- Set expand tab
 set.expandtab = true
-set.tabstop = 4
-set.softtabstop = 4
-set.shiftwidth = 4
 
 -- Set mouse
 set.mouse = nil
@@ -148,6 +145,44 @@ set.scrolloff = 15
 
 -- Set globals
 -- vim.g.python3_host_prog = '/usr/bin/python3'
+
+--------------------------------------------------
+-- Autocommands
+--------------------------------------------------
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
+-- Highlight on yank
+augroup('YankHighlight', { clear = true })
+autocmd('TextYankPost', {
+    group = 'YankHighlight',
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({ higroup = 'IncSearch', timeout = '1000' })
+    end,
+})
+
+-- Prevent auto comment newline
+autocmd('BufEnter', {
+    pattern = '',
+    command = 'set fo-=c fo-=r fo-=o'
+})
+
+-- Set indentation to 2 spaces for some filetypes
+augroup('setIndent', { clear = true})
+autocmd('Filetype', {
+    group = 'setIndent',
+    pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'yaml', 'lua'
+    },
+    command = 'setlocal shiftwidth=2 tabstop=2 softtabstop=2'
+})
+
+-- Set indentation to 4 spaces for some filetypes
+autocmd('Filetype', {
+    group = 'setIndent',
+    pattern = { 'python' },
+    command = 'setlocal shiftwidth=4 tabstop=4 softtabstop=4'
+})
 
 --------------------------------------------------
 -- Basic Keymaps
@@ -325,16 +360,3 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
-
---------------------------------------------------
--- Functions
---------------------------------------------------
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
-})
