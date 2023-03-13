@@ -249,6 +249,14 @@ if not cmp_status_ok then
   return
 end
 
+local lspformat_status_ok, lspformat = pcall(require, 'lsp-format')
+if not lspformat_status_ok then
+  return
+end
+
+-- setup lsp format
+require('lsp-format').setup {}
+
 -- Add additional capabilities supported by nvim-cmp
 -- See: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -258,7 +266,7 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  --vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Highlighting references.
   -- See: https://sbulav.github.io/til/til-neovim-highlight-references/
@@ -298,6 +306,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+
+  -- attach lsp format
+  require('lsp-format').on_attach(client)
 end
 
 -- Diagnostic settings:

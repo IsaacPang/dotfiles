@@ -51,6 +51,9 @@ return require('packer').startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
 
+  -- LSP format
+  use "lukas-reineke/lsp-format.nvim"
+
   -- Autocomplete
   use {
     'hrsh7th/nvim-cmp',
