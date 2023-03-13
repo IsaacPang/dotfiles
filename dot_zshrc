@@ -73,11 +73,3 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 # User defined aliases
 alias python="python3"
 alias pip="pip3"
-
-## deloitte proxies
-## http
-# export http_proxy="http://proxy.au.deloitte.com:8080"
-# export http_proxy="http://serverproxy.au.deloitte.com:80"
-## https
-# export https_proxy="https://proxy.au.deloitte.com:8080"
-# export https_proxy="http://serverproxy.au.deloitte.com:80"
