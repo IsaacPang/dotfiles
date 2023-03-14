@@ -48,6 +48,16 @@ eval "$(pyenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border --margin=1 --padding=1"
 
+## Aliases
+# Example aliases
+alias zshconfig="chezmoi edit ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
+
+# User defined aliases
+alias python="python3"
+alias pip="pip3"
+
+## Functions
 # ranger edit
 function ranger {
     local IFS=$'\t\n'
@@ -65,11 +75,9 @@ function ranger {
     command rm -f -- "$tempfile" 2>/dev/null
 }
 
-## Aliases
-# Example aliases
-alias zshconfig="chezmoi edit ~/.zshrc"
-alias ohmyzsh="cd ~/.oh-my-zsh"
-
-# User defined aliases
-alias python="python3"
-alias pip="pip3"
+# apply local environment variables
+function localenvs {
+    if [[ -f ~/.localenv ]]; then
+        source ~/.localenv
+    fi
+}
