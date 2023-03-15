@@ -4,6 +4,33 @@
 require('plugins')
 
 --------------------------------------------------
+-- Colorscheme Setup
+--------------------------------------------------
+local status_ok, onenord = pcall(require, 'onenord')
+if not status_ok then
+  return
+end
+
+onenord.setup({
+  theme = dark,
+  borders = true,
+  fade_nc = true,
+})
+
+--------------------------------------------------
+-- LuaLine Setup
+--------------------------------------------------
+local status_ok, lualine = pcall(require, 'lualine')
+if not status_ok then
+  return
+end
+
+lualine.setup {
+  options = {
+    theme = 'onenord',
+  }
+}
+--------------------------------------------------
 -- NvimTree Setup
 --------------------------------------------------
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')

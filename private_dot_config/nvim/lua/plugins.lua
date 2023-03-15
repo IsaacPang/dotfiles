@@ -67,4 +67,13 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 
+  -- Colorscheme
+  use 'rmehri01/onenord.nvim'
+
+  -- LuaLine
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
 end)
