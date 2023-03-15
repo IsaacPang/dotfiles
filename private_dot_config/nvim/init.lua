@@ -3,7 +3,9 @@
 --------------------------------------------------
 require('plugins')
 
--- [[ NvimTree Setup ]]
+--------------------------------------------------
+-- NvimTree Setup
+--------------------------------------------------
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')
 if not status_ok then
   return
@@ -27,6 +29,16 @@ require("nvim-tree").setup({
 --------------------------------------------------
 -- Telescope Setup
 --------------------------------------------------
+local status_ok, telescope = pcall(require, 'telescope')
+if not status_ok then
+  return
+end
+require("telescope").setup {
+  defaults ={
+    file_ignore_patterns = {"node_modules", ".git"}
+  }
+}
+
 local telebuiltin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telebuiltin.find_files, {})
 vim.keymap.set('n', '<C-S-f>', telebuiltin.live_grep, {})

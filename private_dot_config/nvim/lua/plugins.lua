@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      {'nvim-tree/nvim-web-devicons', opt=true } -- for file icons
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
@@ -45,7 +45,9 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+    }
   }
 
   -- LSP
