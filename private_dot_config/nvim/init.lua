@@ -38,7 +38,13 @@ local map = require('utils').map
 -- vim-commentary
 map('v', '<C-/>', ':Commentary<CR>')
 map('n', '<C-/>', ':Commentary<CR>')
+--------------------------------------------------
 
+--------------------------------------------------
+-- EasyAlign Keymap Setup
+--------------------------------------------------
+map('v', 'ga', '<Plug>(EasyAlign)', { noremap = false })
+map('n', 'ga', '<Plug>(EasyAlign)', { noremap = false })
 --------------------------------------------------
 
 --------------------------------------------------
@@ -50,7 +56,7 @@ if not status_ok then
 end
 
 -- Basic setup
-require("nvim-tree").setup({
+nvim_tree.setup({
   sort_by = "case_sensitive",
   renderer = {
     group_empty = true,
@@ -72,8 +78,8 @@ if not status_ok then
   return
 end
 require("telescope").setup {
-  defaults ={
-    file_ignore_patterns = {"node_modules", ".git"}
+  defaults = {
+    file_ignore_patterns = { "node_modules", ".git" }
   }
 }
 
@@ -134,7 +140,6 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-
     -- Tab mapping
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
@@ -209,32 +214,32 @@ local augroup = vim.api.nvim_create_augroup
 -- Highlight on yank
 augroup('YankHighlight', { clear = true })
 autocmd('TextYankPost', {
-    group = 'YankHighlight',
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({ higroup = 'IncSearch', timeout = '300' })
-    end,
+  group = 'YankHighlight',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = '300' })
+  end,
 })
 
 -- Prevent auto comment newline
 autocmd('BufEnter', {
-    pattern = '',
-    command = 'set fo-=c fo-=r fo-=o'
+  pattern = '',
+  command = 'set fo-=c fo-=r fo-=o'
 })
 
 -- Set indentation to 2 spaces for some filetypes
-augroup('setIndent', { clear = true})
+augroup('setIndent', { clear = true })
 autocmd('Filetype', {
-    group = 'setIndent',
-    pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'lua' },
-    command = 'setlocal shiftwidth=2 tabstop=2 softtabstop=2'
+  group = 'setIndent',
+  pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'lua' },
+  command = 'setlocal shiftwidth=2 tabstop=2 softtabstop=2'
 })
 
 -- Set indentation to 4 spaces for some filetypes
 autocmd('Filetype', {
-    group = 'setIndent',
-    pattern = { 'python' },
-    command = 'setlocal shiftwidth=4 tabstop=4 softtabstop=4'
+  group = 'setIndent',
+  pattern = { 'python' },
+  command = 'setlocal shiftwidth=4 tabstop=4 softtabstop=4'
 })
 
 --------------------------------------------------
@@ -271,13 +276,13 @@ vim.keymap.set('n', '<leader>r', ':so %<CR>')
 -- Applications and Plugins shortcuts
 --------------------------------------------------
 -- Terminal mappings
-vim.keymap.set('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')                    -- exit
+vim.keymap.set('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')                   -- exit
 
 -- NvimTree
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')       -- open/close
+vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')  -- refresh
+vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
 
 --------------------------------------------------
 -- Neovim LSP
@@ -321,25 +326,25 @@ local on_attach = function(client, bufnr)
   -- See: https://sbulav.github.io/til/til-neovim-highlight-references/
   -- for the highlight trigger time see: `vim.opt.updatetime`
   if client.server_capabilities.documentHighlightProvider then
-      vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
-      vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
-      vim.api.nvim_create_autocmd("CursorHold", {
-          callback = vim.lsp.buf.document_highlight,
-          buffer = bufnr,
-          group = "lsp_document_highlight",
-          desc = "Document Highlight",
-      })
-      vim.api.nvim_create_autocmd("CursorMoved", {
-          callback = vim.lsp.buf.clear_references,
-          buffer = bufnr,
-          group = "lsp_document_highlight",
-          desc = "Clear All the References",
-      })
+    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
+    vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
+    vim.api.nvim_create_autocmd("CursorHold", {
+      callback = vim.lsp.buf.document_highlight,
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      desc = "Document Highlight",
+    })
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      callback = vim.lsp.buf.clear_references,
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      desc = "Clear All the References",
+    })
   end
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -372,7 +377,7 @@ vim.diagnostic.config({
     source = "always",
     header = "",
     prefix = "",
-	},
+  },
 })
 
 -- Show line diagnostics automatically in hover window
@@ -382,7 +387,7 @@ vim.cmd([[
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -400,7 +405,6 @@ HTML/CSS/JSON         -> vscode-html-languageserver
 JavaScript/TypeScript -> tsserver
 Lua                   -> lua-language-server
 --]]
-
 -- Define `root_dir` when needed
 -- See: https://github.com/neovim/nvim-lspconfig/issues/320
 -- This is a workaround, maybe not work with some servers.
