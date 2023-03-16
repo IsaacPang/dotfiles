@@ -38,6 +38,7 @@ local map = require('utils').map
 -- vim-commentary
 map('v', '<C-/>', ':Commentary<CR>')
 map('n', '<C-/>', ':Commentary<CR>')
+
 --------------------------------------------------
 
 --------------------------------------------------
@@ -225,8 +226,7 @@ autocmd('BufEnter', {
 augroup('setIndent', { clear = true})
 autocmd('Filetype', {
     group = 'setIndent',
-    pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'lua'
-    },
+    pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'lua' },
     command = 'setlocal shiftwidth=2 tabstop=2 softtabstop=2'
 })
 
