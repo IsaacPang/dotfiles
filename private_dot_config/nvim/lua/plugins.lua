@@ -76,4 +76,14 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  -- tpope plugins for vim
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-sensible'
+
+  -- easy align
+  use 'junegunn/vim-easy-align'
+
 end)
