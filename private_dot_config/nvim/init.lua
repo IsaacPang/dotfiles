@@ -257,7 +257,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<leader>r', ':so %<CR>')
 
 -- delete all buffers and reopen the current one
-vim.keymap.set('n', '<leader>bd', ':w|%bd|e#|bd#')
+vim.keymap.set('n', '<leader>bd', ':w|%bd|e#|bd#<CR>')
 --------------------------------------------------
 -- Applications and Plugins shortcuts
 --------------------------------------------------
