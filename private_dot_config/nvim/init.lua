@@ -32,22 +32,6 @@ lualine.setup {
 }
 
 --------------------------------------------------
--- tpope Keymap Setup
---------------------------------------------------
-local map = require('utils').map
--- vim-commentary
-map('v', '<C-/>', ':Commentary<CR>')
-map('n', '<C-/>', ':Commentary<CR>')
---------------------------------------------------
-
---------------------------------------------------
--- EasyAlign Keymap Setup
---------------------------------------------------
-map('v', 'ga', '<Plug>(EasyAlign)', { noremap = false })
-map('n', 'ga', '<Plug>(EasyAlign)', { noremap = false })
---------------------------------------------------
-
---------------------------------------------------
 -- NvimTree Setup
 --------------------------------------------------
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')
@@ -272,9 +256,21 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 -- Reload configuration without restart nvim
 vim.keymap.set('n', '<leader>r', ':so %<CR>')
 
+-- delete all buffers and reopen the current one
+vim.keymap.set('n', '<leader>bd', ':w|%bd|e#|bd#')
 --------------------------------------------------
 -- Applications and Plugins shortcuts
 --------------------------------------------------
+-- tpope Keymap Setup
+local map = require('utils').map
+-- vim-commentary
+map('v', '<C-/>', ':Commentary<CR>')
+map('n', '<C-/>', ':Commentary<CR>')
+
+-- EasyAlign Keymap Setup
+map('v', 'ga', '<Plug>(EasyAlign)', { noremap = false })
+map('n', 'ga', '<Plug>(EasyAlign)', { noremap = false })
+
 -- Terminal mappings
 vim.keymap.set('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')                   -- exit
