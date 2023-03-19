@@ -1,106 +1,107 @@
 -- This file can be loaded by calling `lua require('plugins')` from init.vim
-
 -- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath 'data' ..
+                         '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  is_bootstrap = true
-  vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-  vim.cmd [[packadd packer.nvim]]
+    is_bootstrap = true
+    vim.fn.system {
+        'git', 'clone', '--depth', '1',
+        'https://github.com/wbthomason/packer.nvim', install_path
+    }
+    vim.cmd [[packadd packer.nvim]]
 end
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- File explorer
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      { 'nvim-tree/nvim-web-devicons', opt = true } -- for file icons
-    },
-    tag = 'nightly'                                 -- optional, updated every week. (see issue #1193)
-  }
-
-  -- Autopair
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup {}
-    end
-  }
-
-  -- Icons
-  use 'kyazdani42/nvim-web-devicons'
-
-  -- Treesitter interface
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
-
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = {
-      { 'nvim-lua/plenary.nvim' },
+    -- File explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            {'nvim-tree/nvim-web-devicons', opt = true} -- for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
-  }
 
-  -- Autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = { { 'hrsh7th/cmp-nvim-lsp' } }
-  }
+    -- Markdown Preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = {"markdown"} end,
+        ft = {"markdown"}
+    })
 
-  -- LSP
-  use {
-    'neovim/nvim-lspconfig',
-    requires = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
-    config = function()
-      require("_lsp").setup()
-    end,
-  }
+    -- Autopair
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup {} end
+    }
 
-  -- LSP format
-  use "lukas-reineke/lsp-format.nvim"
+    -- Icons
+    use 'kyazdani42/nvim-web-devicons'
 
-  -- null-ls
-  use { "jose-elias-alvarez/null-ls.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("_null-ls")
-    end
-  }
+    -- Treesitter interface
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            require('nvim-treesitter.install').update({with_sync = true})
+        end
+    }
 
-  -- Colorscheme
-  use 'rmehri01/onenord.nvim'
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
 
-  -- LuaLine
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+    -- Autocomplete
+    use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}}}
 
-  -- tpope plugins for vim
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-sensible'
+    -- LSP
+    use {
+        'neovim/nvim-lspconfig',
+        requires = {
+            "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim"
+        },
+        config = function() require("_lsp").setup() end
+    }
 
-  -- easy align
-  use 'junegunn/vim-easy-align'
+    -- LSP format
+    use "lukas-reineke/lsp-format.nvim"
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if is_bootstrap then
-    require('packer').sync()
-  end
+    -- null-ls
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = {"nvim-lua/plenary.nvim"},
+        config = function() require("_null-ls") end
+    }
+
+    -- Colorscheme
+    use 'rmehri01/onenord.nvim'
+
+    -- LuaLine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+
+    -- tpope plugins for vim
+    use 'tpope/vim-commentary'
+    use 'tpope/vim-surround'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-repeat'
+    use 'tpope/vim-sensible'
+
+    -- easy align
+    use 'junegunn/vim-easy-align'
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if is_bootstrap then require('packer').sync() end
 end)
