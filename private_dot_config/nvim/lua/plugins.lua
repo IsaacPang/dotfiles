@@ -20,16 +20,16 @@ return require('packer').startup(function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
-      {'nvim-tree/nvim-web-devicons', opt=true } -- for file icons
+      { 'nvim-tree/nvim-web-devicons', opt = true } -- for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly'                                 -- optional, updated every week. (see issue #1193)
   }
 
   -- Autopair
   use {
     'windwp/nvim-autopairs',
     config = function()
-      require('nvim-autopairs').setup{}
+      require('nvim-autopairs').setup {}
     end
   }
 
@@ -50,22 +50,34 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Autocomplete
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = { { 'hrsh7th/cmp-nvim-lsp' } }
+  }
+
   -- LSP
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    config = function()
+      require("_lsp").setup()
+    end,
+  }
 
   -- LSP format
   use "lukas-reineke/lsp-format.nvim"
 
-  -- Autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = { {'hrsh7th/cmp-nvim-lsp'} }
+  -- null-ls
+  use { "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("_null-ls")
+    end
   }
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
 
   -- Colorscheme
   use 'rmehri01/onenord.nvim'
@@ -86,4 +98,9 @@ return require('packer').startup(function(use)
   -- easy align
   use 'junegunn/vim-easy-align'
 
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if is_bootstrap then
+    require('packer').sync()
+  end
 end)
