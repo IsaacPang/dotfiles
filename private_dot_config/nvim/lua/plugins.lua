@@ -61,7 +61,19 @@ return require('packer').startup(function(use)
     }
 
     -- Autocomplete
-    use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}}}
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {{'hrsh7th/cmp-nvim-lsp'}, {'saadparwaiz1/cmp_luasnip'}}
+    }
+
+    -- LuaSnip (engine for cmp)
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v<CurrentMajor>.*",
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
 
     -- LSP
     use {
