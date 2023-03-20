@@ -107,6 +107,7 @@ function _lsp.setup()
                 capabilities = capabilities,
                 settings = {
                     Lua = {
+                        -- for other lua projects, create a .luarc.json with {"runtime.version": "Lua 5.4"}
                         runtime = {version = 'LuaJIT'},
                         completion = {callSnippet = 'Replace'},
                         diagnostics = {enable = true, globals = {'vim'}}
