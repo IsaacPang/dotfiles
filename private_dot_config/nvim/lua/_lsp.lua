@@ -105,7 +105,13 @@ function _lsp.setup()
                 on_attach = on_attach,
                 root_dir = root_dir,
                 capabilities = capabilities,
-                settings = {Lua = {diagnostics = {globals = {'vim'}}}},
+                settings = {
+                    Lua = {
+                        runtime = {version = 'LuaJIT'},
+                        completion = {callSnippet = 'Replace'},
+                        diagnostics = {enable = true, globals = {'vim'}}
+                    }
+                },
                 flags = {
                     -- default in neovim 0.7+
                     debounce_text_changes = 150
