@@ -108,7 +108,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-repeat'
-    use 'tpope/vim-sensible'
+    -- use 'tpope/vim-sensible' -- removed due to clash with userdefined scrolloff
 
     -- easy align
     use 'junegunn/vim-easy-align'
