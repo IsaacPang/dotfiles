@@ -6,6 +6,7 @@ local sources = {
     -- null_ls.builtins.formatting.beautysh, -- bash
     null_ls.builtins.formatting.black.with({extra_args = {"--line-length=120"}}), -- python
     null_ls.builtins.formatting.isort, -- python
+    null_ls.builtins.formatting.sql_formatter, -- python
     null_ls.builtins.formatting.clang_format, -- c/c++
     null_ls.builtins.formatting.prettierd, -- js/ts/html/css/json/md
     null_ls.builtins.formatting.lua_format, -- lua
