@@ -1,2 +1,3 @@
 alias vim="nvim"
 alias python="python3"
+alias now="date +'%Y-%m-%dT%H:%M:%S'"
