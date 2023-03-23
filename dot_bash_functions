@@ -72,3 +72,18 @@ function localenvs {
         source ~/.localenv
     fi
 }
+
+# gets the date given modifier
+function get_date() {
+    local modifier="${1:-+0S}"
+    local valid_units=("y" "m" "w" "d" "H" "M" "S")
+
+    # Check if the modifier is valid
+    if [[ ! "${modifier}" =~ ^[-+][0-9]+[${valid_units[*]}]$ ]]; then
+        echo "Invalid modifier: ${modifier}"
+        return 1
+    fi
+
+    # Use the date program to print the modified date
+    date -v "${modifier}" +"%Y-%m-%dT%H:%M:%S"
+}
