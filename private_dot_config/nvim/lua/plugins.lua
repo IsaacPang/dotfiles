@@ -94,6 +94,16 @@ return require('packer').startup(function(use)
         config = function() require("_null-ls") end
     }
 
+    -- neogen annotation
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {snippet_engine = "luasnip"}
+        end,
+        tag = "*", -- Comment out this line to use nightly
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
+
     -- Colorscheme
     use 'rmehri01/onenord.nvim'
 

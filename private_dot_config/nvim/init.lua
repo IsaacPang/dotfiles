@@ -260,6 +260,15 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 --------------------------------------------------
+-- Neogen Annotations
+--------------------------------------------------
+-- keybind for generating using lua api
+vim.api.nvim_set_keymap("n", "<leader>d",
+                        ":lua require('neogen').generate()<CR>",
+                        {noremap = true, silent = true})
+--------------------------------------------------
+
+--------------------------------------------------
 -- Settings options
 --------------------------------------------------
 local set = vim.opt
