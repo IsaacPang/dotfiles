@@ -38,8 +38,10 @@ nvim_tree.setup({
 --------------------------------------------------
 local telescope_status_ok, telescope = pcall(require, 'telescope')
 local lga_ok, lga_actions = pcall(require, 'telescope-live-grep-args.actions')
+
 if not telescope_status_ok then return end
 if not lga_ok then return end
+
 telescope.setup {
     extensions = {
         live_grep_args = {
@@ -57,9 +59,12 @@ telescope.setup {
 
 local telebuiltin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telebuiltin.find_files, {})
-vim.keymap.set('n', '<C-S-f>', telebuiltin.live_grep, {})
+-- vim.keymap.set('n', '<C-S-f>', telebuiltin.live_grep, {})
 vim.keymap.set('n', '<C-S-b>', telebuiltin.buffers, {})
 
+vim.keymap.set('n', '<C-S-f>',
+               ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+               {})
 --------------------------------------------------
 -- Tree-sitter Setup
 --------------------------------------------------
