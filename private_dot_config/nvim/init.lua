@@ -37,8 +37,23 @@ nvim_tree.setup({
 -- Telescope Setup
 --------------------------------------------------
 local telescope_status_ok, telescope = pcall(require, 'telescope')
+local lga_ok, lga_actions = pcall(require, 'telescope-live-grep-args.actions')
 if not telescope_status_ok then return end
-telescope.setup {defaults = {file_ignore_patterns = {"node_modules", ".git"}}}
+if not lga_ok then return end
+telescope.setup {
+    extensions = {
+        live_grep_args = {
+            auto_quoting = true,
+            mappings = {
+                i = {
+                    ["<C-k>"] = lga_actions.quote_prompt(),
+                    ["<C-i>"] = lga_actions.quote_prompt({postfix = " --iglob "})
+                }
+            }
+        }
+    },
+    defaults = {file_ignore_patterns = {"node_modules", ".git"}}
+}
 
 local telebuiltin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telebuiltin.find_files, {})
