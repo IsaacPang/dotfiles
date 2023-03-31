@@ -98,3 +98,6 @@ function get_date() {
     # Use the date program to print the modified date
     date -v "${modifier}" +"%Y-%m-%dT%H:%M:%S"
 }
+
+# Codon compiler path (added by install script)
+export PATH=/Users/ispang/.codon/bin:$PATH
