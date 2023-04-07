@@ -7,17 +7,18 @@ Language servers setup:
 For language servers list see:
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
-| Language              | Language Server            | Linter   | Formatter     |
-| ----                  | ----                       | ----     | ----          |
-| Bash                  | bash-language-server       |          | beautysh      |
-| Python                | ruff-lsp                   |          | black, isort  |
-| SQL                   | sqlls                      |          | sql-formatter |
-| C-C++                 | clangd                     |          | clang-format  |
-| HTML/CSS              | html-lsp                   |          | prettierd     |
-| JSON                  | json-lsp                   |          | prettierd     |
-| JavaScript/TypeScript | typescript-language-server |          | prettierd     |
-| Lua                   | lua-language-server        | luacheck | luaformatter  |
-| Rust                  | rust-analyzer              |          | rustfmt       |
+| Language              | Language Server            | Linter   | Formatter                             |
+| ----                  | ----                       | ----     | ----                                  |
+| Bash                  | bash-language-server       |          | beautysh                              |
+| Python                | ruff-lsp                   | ruff     | black, isort                          |
+| SQL                   | sqlls                      |          | sql-formatter                         |
+| C-C++                 | clangd                     |          | clang-format                          |
+| HTML/CSS              | html-lsp                   |          | prettierd                             |
+| JSON                  | json-lsp                   |          | prettierd                             |
+| JavaScript/TypeScript | typescript-language-server |          | prettierd                             |
+| Lua                   | lua-language-server        | luacheck | luaformatter                          |
+| Rust                  | rust-analyzer              |          | rustfmt                               |
+| Go                    | gopls                      |          | goimports, goimports_reviser, gofumpt |
 
 install LSPs with Mason (:MasonInstall <server/linter/formatter>)
 ]] --

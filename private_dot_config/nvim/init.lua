@@ -282,6 +282,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 --------------------------------------------------
 -- Neogen Annotations
 --------------------------------------------------
+-- Setup
+local neogen_status_ok, neogen = pcall(require, 'neogen')
+if not neogen_status_ok then return end
+
+neogen.setup {enabled = true, snippet_engine = "luasnip"}
+
 -- keybind for generating using lua api
 vim.api.nvim_set_keymap("n", "<leader>d",
                         ":lua require('neogen').generate()<CR>",
@@ -408,7 +414,7 @@ local map = require('utils').map
 map('v', '<C-/>', ':Commentary<CR>')
 map('n', '<C-/>', ':Commentary<CR>')
 
--- EasyAlign Keymap Setup
+-- EasyAlign Keymap Setup https://github.com/junegunn/vim-easy-align
 map('v', 'ga', '<Plug>(EasyAlign)', {noremap = false})
 map('n', 'ga', '<Plug>(EasyAlign)', {noremap = false})
 
