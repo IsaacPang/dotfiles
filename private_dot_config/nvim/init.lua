@@ -42,6 +42,17 @@ local lga_ok, lga_actions = pcall(require, 'telescope-live-grep-args.actions')
 if not telescope_status_ok then return end
 if not lga_ok then return end
 
+local telescopeConfig = require("telescope.config")
+
+-- Clone the default Telescope configuration
+local vimgrep_arguments = {unpack(telescopeConfig.values.vimgrep_arguments)}
+
+-- I want to search in hidden/dot files.
+table.insert(vimgrep_arguments, "--hidden")
+-- I don't want to search in the `.git` directory.
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!**/.git/*")
+
 telescope.setup {
     extensions = {
         live_grep_args = {
@@ -54,14 +65,26 @@ telescope.setup {
             }
         }
     },
-    defaults = {file_ignore_patterns = {"node_modules", ".git"}}
+    defaults = {
+        -- `hidden=true` is not supported in the text grep commands.
+        vimgrep_arguments = vimgrep_arguments,
+        file_ignore_patterns = {"node_modules/", ".git/", "yarn/"}
+    },
+    pickers = {
+        find_files = {
+            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+            -- include the option to ignore the .gitignore file
+            find_command = {
+                "rg", "--files", "--hidden", "--glob", "--no-ignore"
+            }
+        }
+    }
 }
 
 local telebuiltin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telebuiltin.find_files, {})
 -- vim.keymap.set('n', '<C-S-f>', telebuiltin.live_grep, {})
 vim.keymap.set('n', '<C-S-b>', telebuiltin.buffers, {})
-
 vim.keymap.set('n', '<C-S-f>',
                ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
                {})
