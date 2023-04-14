@@ -44,14 +44,15 @@ if not lga_ok then return end
 
 local telescopeConfig = require("telescope.config")
 
--- Clone the default Telescope configuration
+-- -- Clone the default Telescope configuration
 local vimgrep_arguments = {unpack(telescopeConfig.values.vimgrep_arguments)}
 
 -- I want to search in hidden/dot files.
 table.insert(vimgrep_arguments, "--hidden")
+table.insert(vimgrep_arguments, "--no-ignore")
 -- I don't want to search in the `.git` directory.
 table.insert(vimgrep_arguments, "--glob")
-table.insert(vimgrep_arguments, "!**/.git/*")
+-- table.insert(vimgrep_arguments, "!**/.git/*")
 
 telescope.setup {
     extensions = {
@@ -74,9 +75,7 @@ telescope.setup {
         find_files = {
             -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
             -- include the option to ignore the .gitignore file
-            find_command = {
-                "rg", "--files", "--hidden", "--glob", "--no-ignore"
-            }
+            find_command = {"rg", "--files", "--hidden", "--no-ignore"}
         }
     }
 }
