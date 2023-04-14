@@ -55,8 +55,8 @@ alias zshconfig="chezmoi edit ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 
 # User defined aliases
-alias python="python3"
-alias pip="pip3"
+alias python="$(pyenv which python)"
+alias pip="$(pyenv which pip)"
 alias now="date -Iseconds | sed 's/+.*$//'"
 
 ## Functions
