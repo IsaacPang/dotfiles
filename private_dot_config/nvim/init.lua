@@ -134,7 +134,11 @@ if not luasnip_status_ok then return end
 cmp.setup {
     -- Load snippet 
     snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
-
+    -- Window settings
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered()
+    },
     -- Completion settings
     completion = {
         -- completeopt = 'menu,menuone,noselect'
