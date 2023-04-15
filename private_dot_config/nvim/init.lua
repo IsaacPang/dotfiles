@@ -61,8 +61,9 @@ local vimgrep_arguments = {unpack(telescopeConfig.values.vimgrep_arguments)}
 -- I want to search in hidden/dot files.
 table.insert(vimgrep_arguments, "--hidden")
 table.insert(vimgrep_arguments, "--no-ignore")
+
 -- I don't want to search in the `.git` directory.
-table.insert(vimgrep_arguments, "--glob")
+-- table.insert(vimgrep_arguments, "--glob") -- errors found from --glob
 -- table.insert(vimgrep_arguments, "!**/.git/*")
 
 telescope.setup {
@@ -93,6 +94,7 @@ telescope.setup {
 
 local telebuiltin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telebuiltin.find_files, {})
+vim.keymap.set('n', '<C-S-p>', telebuiltin.git_files, {})
 -- vim.keymap.set('n', '<C-S-f>', telebuiltin.live_grep, {})
 vim.keymap.set('n', '<C-S-b>', telebuiltin.buffers, {})
 vim.keymap.set('n', '<C-S-f>',
