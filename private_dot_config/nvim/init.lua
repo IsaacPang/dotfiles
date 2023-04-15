@@ -1,3 +1,4 @@
+-- check runtimepath (:h rtp)
 --------------------------------------------------
 -- Plugins
 --------------------------------------------------
@@ -17,7 +18,17 @@ onenord.setup({theme = "dark", borders = true, fade_nc = true})
 local lualine_status_ok, lualine = pcall(require, 'lualine')
 if not lualine_status_ok then return end
 
-lualine.setup {options = {theme = 'onenord'}}
+lualine.setup {
+    options = {theme = 'onenord'},
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch'},
+        lualine_c = {'filename'},
+        lualine_x = {'fileformat'},
+        lualine_y = {'filetype'},
+        lualine_z = {'location'}
+    }
+}
 
 --------------------------------------------------
 -- NvimTree Setup
