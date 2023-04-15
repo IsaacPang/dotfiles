@@ -8,7 +8,7 @@ local sources = {
     null_ls.builtins.formatting.sql_formatter, -- sql
     null_ls.builtins.formatting.clang_format, -- c/c++
     null_ls.builtins.formatting.prettierd, -- js/ts/html/css/json/md
-    null_ls.builtins.formatting.luaformatter, -- lua
+    null_ls.builtins.formatting.lua_format, -- lua
     null_ls.builtins.formatting.rustfmt, -- rust
     null_ls.builtins.formatting.google_java_format, -- java
     null_ls.builtins.formatting.gofumpt, -- golang
