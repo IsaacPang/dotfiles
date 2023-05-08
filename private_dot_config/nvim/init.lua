@@ -81,7 +81,7 @@ telescope.setup {
     defaults = {
         -- `hidden=true` is not supported in the text grep commands.
         vimgrep_arguments = vimgrep_arguments,
-        file_ignore_patterns = {"node_modules/", ".git/", "yarn/"}
+        file_ignore_patterns = {"node_modules/", ".git/", "yarn/", ".venv/"}
     },
     pickers = {
         find_files = {
