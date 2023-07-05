@@ -102,3 +102,11 @@ function get_date() {
 
 # Codon compiler path (added by install script)
 export PATH=/Users/ispang/.codon/bin:$PATH
+
+if [ $(arch) = "i386" ]; then
+        eval "$(/usr/local/bin/brew shellenv)"
+        alias python="/usr/local/bin/python3"
+        alias brew86="/usr/local/bin/brew"
+        alias pyenv86="arch -x86_64 pyenv"
+        alias func="/usr/local/Cellar/azure-functions-core-tools@4/4.0."
+fi
