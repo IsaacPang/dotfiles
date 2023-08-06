@@ -94,8 +94,8 @@ function ranger {
 
 # apply local environment variables
 function localenvs {
-    if [[ -f ~/.localenv ]]; then
-        source ~/.localenv
+    if [[ -f ~/.localenv.sh ]]; then
+        source ~/.localenv.sh "$@"
     fi
 }
 
