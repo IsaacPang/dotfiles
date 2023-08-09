@@ -13,12 +13,12 @@ local sources = {
     null_ls.builtins.formatting.google_java_format, -- java
     null_ls.builtins.formatting.gofumpt, -- golang
     null_ls.builtins.formatting.goimports, -- golang
-    null_ls.builtins.formatting.goimports_reviser, -- golang
+    null_ls.builtins.formatting.goimports_reviser -- golang
     -- Diagnostics
-    null_ls.builtins.diagnostics.ruff, -- python
-    null_ls.builtins.diagnostics.eslint_d, -- js/ts/html/css/json
-    null_ls.builtins.diagnostics.markdownlint, -- markdown
-    null_ls.builtins.diagnostics.hadolint -- dockerfiles
+    -- null_ls.builtins.diagnostics.ruff, -- python
+    -- null_ls.builtins.diagnostics.eslint_d, -- js/ts/html/css/json
+    -- null_ls.builtins.diagnostics.markdownlint, -- markdown
+    -- null_ls.builtins.diagnostics.hadolint -- dockerfiles
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
