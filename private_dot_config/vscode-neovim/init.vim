@@ -182,7 +182,7 @@ nmap <C-_> gcc
 " --------------------------------------------------
 " General Settings
 " --------------------------------------------------
-let g:python3_host_prog = expand('~/miniconda3/bin/python3')
+" let g:python3_host_prog = expand('~/miniconda3/bin/python3')
 set relativenumber number
 let mapleader=' '
 let maplocalleader='\'
@@ -194,9 +194,9 @@ set nobackup
 set nowb
 set binary
 set termguicolors
-set textwidth=100
-set foldmethod=indent
-set nofoldenable
+" set textwidth=100
+" set foldmethod=indent
+" set nofoldenable
 set hidden
 set noshowmode
 set title
@@ -215,15 +215,15 @@ set scrolloff=5
 " Autocommands
 " --------------------------------------------------
 " tabstops by filetype
-autocmd FileType go set tabstop=2|set shiftwidth=2|set noexpandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
+" autocmd FileType go set tabstop=2|set shiftwidth=2|set noexpandtab
+" autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+" autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
+" autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
+" autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab
+" autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
 
 " JSON comments matching
-autocmd FileType json syntax match Comment +\/\/.\+$+
+" autocmd FileType json syntax match Comment +\/\/.\+$+
 " --------------------------------------------------
 
 " -------------------------------------------------- 
