@@ -1,7 +1,7 @@
 # Enable the subsequent settings only in interactive sessions
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Path to your oh-my-bash installation.
@@ -19,9 +19,9 @@ OMB_USE_SUDO=true
 # Example format: completions=(ssh git bundler gem pip pip3)
 # Add wisely, as too many completions slow down shell startup.
 completions=(
-  git
-  composer
-  ssh
+	git
+	composer
+	ssh
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -29,7 +29,7 @@ completions=(
 # Example format: aliases=(vagrant composer git-avh)
 # Add wisely, as too many aliases slow down shell startup.
 aliases=(
-  general
+	general
 )
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
@@ -37,17 +37,17 @@ aliases=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  bashmarks
+	git
+	bashmarks
 )
 
 source "$OSH"/oh-my-bash.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+	export EDITOR='vim'
 else
-  export EDITOR='nvim'
+	export EDITOR='nvim'
 fi
 
 # ssh
@@ -55,25 +55,25 @@ fi
 
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # Function defnitions
 if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
+	. ~/.bash_functions
 fi
 
 # --------------------------------------------------
 # adding .profile settings here
 # --------------------------------------------------
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/bin" ]; then
+	PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
 fi
 # --------------------------------------------------
 
@@ -81,15 +81,15 @@ fi
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
 
 # display only 2 deep directory on window title
-echo -ne "\033]0;${PWD/${PWD%*\/*\/*}\/}\007"
+echo -ne "\033]0;${PWD/${PWD%*\/*\/*}\//}\007"
 
 # set ranger export
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # set nvm variables
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # pyenv options
 export PYENV_ROOT="$HOME/.pyenv"
@@ -100,3 +100,6 @@ eval "$(pyenv init -)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border --margin=1 --padding=1"
 . "$HOME/.cargo/env"
+
+# go options
+export PATH=$PATH:/usr/local/go/bin
