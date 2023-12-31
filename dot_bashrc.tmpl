@@ -1,3 +1,4 @@
+export EDITOR=nvim
 export OSH=$HOME/.oh-my-bash
 OSH_THEME="font"
 HYPHEN_INSENSITIVE="true"
@@ -97,9 +98,10 @@ esac
 # --------------------------------------------------
 # custom os & term options
 # --------------------------------------------------
-# swap escape with capslock
-# dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
-
+{{ if eq .chezmoi.hostname "Prestige-14Evo-A12M" }}
+# swap escape with capslock on the Prestige-14Evo-A12M
+dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
+{{ end }}
 # display only 2 deep directory on window title
 echo -ne "\033]0;${PWD/${PWD%*\/*\/*}\//}\007"
 # --------------------------------------------------
