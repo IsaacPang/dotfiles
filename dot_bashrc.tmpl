@@ -98,7 +98,7 @@ esac
 # --------------------------------------------------
 # custom os & term options
 # --------------------------------------------------
-{{ if eq .chezmoi.hostname "Prestige-14Evo-A12M" }}
+{{ if eq .chezmoi.hostname "my-special-linux-only-machine" }}
 # swap escape with capslock on the Prestige-14Evo-A12M
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
 {{ end }}
