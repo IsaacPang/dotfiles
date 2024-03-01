@@ -3,6 +3,8 @@
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode
+      "space space": "file_finder::Toggle",
+      "space |": "pane::SplitRight"
     }
   },
   {
