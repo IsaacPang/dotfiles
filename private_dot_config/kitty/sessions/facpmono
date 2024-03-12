@@ -8,6 +8,7 @@ launch --title "neovim" nvim
 new_tab daemons
 layout fat
 cd ~/Projects/cosmosdb/cosmosdb-server-local/
+npm run dev
 launch zsh
 
 cd ~/Projects/fa-clientportal/fa-clientportal-mono
