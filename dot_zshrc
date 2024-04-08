@@ -69,7 +69,7 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 alias now="date -Iseconds | sed 's/+.*$//'"
 
 ## Functions
-# ranger edit
+# ranger edit to close ranger to current folder on Q
 function ranger {
     local IFS=$'\t\n'
     local tempfile="$(mktemp -t tmp.XXXXXX)"
