@@ -4,4 +4,4 @@
 local map = vim.keymap.set
 
 -- remap kj to esc
-map({ "n", "i", "v" }, "kj", "<esc>", { desc = "Esc" })
+map({ "o", "i", "v" }, "kj", "<esc>", { noremap = true, silent = true, desc = "Esc" })
