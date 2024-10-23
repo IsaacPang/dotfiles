@@ -126,3 +126,5 @@ eval "$(pyenv init -)"
 
 
 PATH=~/.console-ninja/.bin:$PATH
+
+eval "$(ssh-agent -s)"
