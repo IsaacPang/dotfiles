@@ -22,12 +22,12 @@ if [ $(arch) = "i386" ]; then
 
         plugins=(
             git
-            zsh-nvm
+            # zsh-nvm
         )
 else
         plugins=(
             git
-            zsh-nvm
+            # zsh-nvm
             poetry
         )
 fi
@@ -50,8 +50,8 @@ else
 fi
 
 # nvm commands
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # fzf options
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
