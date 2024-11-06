@@ -1,10 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
 -- check for vscode usage
 if vim.g.vscode then
-  -- vscode vim
-  require("config.lazy")
-  require("vscode.keymaps")
 else
-  require("config.lazy")
   require("config.oil")
 end
