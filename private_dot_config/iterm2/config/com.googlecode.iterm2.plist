@@ -665,6 +665,8 @@
 	<string>770A8B4D-6387-4E65-84A1-7ED58F4DB233</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideScrollbar</key>
+	<true/>
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyChar</key>
@@ -3017,6 +3019,8 @@
 	<integer>0</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
+	<key>UseBorder</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 </dict>
