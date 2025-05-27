@@ -1,0 +1,2 @@
+# uv
+export PATH="/Users/isaac/.local/bin:$PATH"
