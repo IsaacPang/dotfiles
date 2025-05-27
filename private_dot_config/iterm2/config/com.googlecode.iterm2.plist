@@ -683,6 +683,10 @@
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_5757D3D2-A936-4B03-B313-38D9D0239337_selection</key>
 	<integer>0</integer>
+	<key>NeverWarnAboutShortLivedSessions_770A8B4D-6387-4E65-84A1-7ED58F4DB233</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_770A8B4D-6387-4E65-84A1-7ED58F4DB233_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -693,7 +697,7 @@
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Animate Movement</key>
-			<true/>
+			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1401,7 +1405,7 @@
 				<real>0.92929404973983765</real>
 			</dict>
 			<key>Blinking Cursor</key>
-			<true/>
+			<false/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
@@ -1531,6 +1535,8 @@
 				<key>Red Component</key>
 				<real>0.29803921568627451</real>
 			</dict>
+			<key>Cursor Shadow</key>
+			<true/>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1570,6 +1576,8 @@
 				<key>Red Component</key>
 				<real>0.93725490196078431</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -3034,6 +3042,10 @@
 			<string>/Users/isaac</string>
 		</dict>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -3067,6 +3079,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>RestoreWindowsToSameSpaces</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
