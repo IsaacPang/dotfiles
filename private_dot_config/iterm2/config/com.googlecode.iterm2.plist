@@ -679,6 +679,10 @@
 	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524576</integer>
+	<key>NeverWarnAboutShortLivedSessions_2CC97C64-C8DC-4A92-9D02-35891F1A6656</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_2CC97C64-C8DC-4A92-9D02-35891F1A6656_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_5757D3D2-A936-4B03-B313-38D9D0239337</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_5757D3D2-A936-4B03-B313-38D9D0239337_selection</key>
@@ -3019,7 +3023,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.29999999999999999</real>
+			<real>0.029999999999999999</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -4117,6 +4121,8 @@
 			<string>IosevkaNFM 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
+			<key>Prevent Opening in a Tab</key>
+			<false/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -4220,7 +4226,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.29999999999999999</real>
+			<real>0.029999999999999999</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -4238,7 +4244,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>5</integer>
+			<integer>8</integer>
 			<key>Working Directory</key>
 			<string>/Users/isaac</string>
 		</dict>

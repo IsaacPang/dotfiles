@@ -8,7 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "base_keymap": "VSCode",
-  "theme": "Catppuccin Macchiato",
+  "theme": "Catppuccin Frappé",
   "telemetry": {
     "metrics": false
   },
