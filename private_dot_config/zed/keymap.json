@@ -19,14 +19,16 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       // visual, visual line & visual block modes
+      "j k": ["workspace::SendKeystrokes", "escape"],
+      "k j": ["workspace::SendKeystrokes", "escape"]
     }
   },
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in insert mode
-      // e.g.
-      // "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+      "j k": "vim::NormalBefore",
+      "k j": "vim::NormalBefore" // remap jj in insert mode to escape. // remap jj in insert mode to escape.
     }
   }
 ]
