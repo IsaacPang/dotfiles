@@ -3041,7 +3041,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>7</integer>
 			<key>Working Directory</key>
 			<string>/Users/isaac</string>
 		</dict>

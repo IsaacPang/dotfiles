@@ -10,8 +10,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- remap kj and jk to esc
-keymap({ "o", "i", "v" }, "kj", "<esc>", { noremap = true, silent = true, desc = "Esc" })
-keymap({ "o", "i", "v" }, "jk", "<esc>", { noremap = true, silent = true, desc = "Esc" })
+keymap({ "o", "i" }, "kj", "<esc>", { noremap = true, silent = true, desc = "Esc" })
+keymap({ "o", "i" }, "jk", "<esc>", { noremap = true, silent = true, desc = "Esc" })
 
 -- yank to system keyboard
 keymap({ "n", "v" }, "<leader>y", '"+y', opts)
