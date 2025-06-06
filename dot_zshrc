@@ -63,6 +63,7 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 # alias python="python3"
 # alias pip="pip3"
 alias now="date -Iseconds | sed 's/+.*$//'"
+alias tt="taskwarrior-tui"
 
 ## Functions
 # ranger edit to close ranger to current folder on Q

@@ -1,3 +1,4 @@
+verbose=affected,blank,context,edit,header,footnote,label,new-id,project,special,sync,recur
 
 # Color theme (uncomment one to use)
 #include light-16.theme
