@@ -35,4 +35,3 @@ hooks.location=~/.config/task/hooks
 verbose=affected,blank,context,edit,header,footnote,label,new-id,project,special,sync,recur
 context.work.read=+deloitte
 context.work.write=+deloitte
-context.home.read=-work

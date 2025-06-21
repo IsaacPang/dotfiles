@@ -4,6 +4,8 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>catppuccin-frappe</key>
@@ -667,6 +669,10 @@
 	<string>770A8B4D-6387-4E65-84A1-7ED58F4DB233</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideFromDockAndAppSwitcher</key>
+	<true/>
+	<key>HideMenuBarInFullscreen</key>
+	<false/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>Hotkey</key>
@@ -679,6 +685,8 @@
 	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524576</integer>
+	<key>NeverBlockSystemShutdown</key>
+	<true/>
 	<key>NeverWarnAboutShortLivedSessions_2CC97C64-C8DC-4A92-9D02-35891F1A6656</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_2CC97C64-C8DC-4A92-9D02-35891F1A6656_selection</key>
@@ -1723,6 +1731,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>IosevkaNFM 12</string>
+			<key>Open Password Manager Automatically</key>
+			<true/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1819,6 +1829,8 @@
 			<string></string>
 			<key>Silence Bell</key>
 			<false/>
+			<key>Space</key>
+			<integer>-1</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -4287,7 +4299,7 @@
 		</dict>
 	</dict>
 	<key>RestoreWindowsToSameSpaces</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
