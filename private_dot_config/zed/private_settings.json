@@ -7,6 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent": {
+    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "play_sound_when_agent_done": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    }
+  },
   "base_keymap": "VSCode",
   "theme": "Catppuccin Frappé",
   "telemetry": {
@@ -31,6 +40,25 @@
           "includeInlayPropertyDeclarationTypeHints": true,
           "includeInlayFunctionLikeReturnTypeHints": true,
           "includeInlayEnumMemberValueHints": true
+        }
+      }
+    }
+  },
+  "languages": {
+    "JavaScript": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "Python": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "black"
         }
       }
     }
