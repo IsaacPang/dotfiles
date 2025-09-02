@@ -118,3 +118,9 @@ esac
 
 # other env vars
 XDG_CONFIG_HOME="$HOME/.config"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ispang/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH=$PATH:$HOME/go/bin
