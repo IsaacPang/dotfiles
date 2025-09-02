@@ -123,4 +123,5 @@ XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:/Users/ispang/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# add go to PATH
 export PATH=$PATH:$HOME/go/bin
