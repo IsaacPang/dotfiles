@@ -174,3 +174,10 @@ PATH=~/.console-ninja/.bin:$PATH
 
 # xdg
 XDG_CONFIG_HOME="$HOME/.config"
+
+{{ if eq .chezmoi.hostname "AU-XP96C3Y7HP" }}
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ispang/.lmstudio/bin"
+# End of LM Studio CLI section
+{{ end }}
+
