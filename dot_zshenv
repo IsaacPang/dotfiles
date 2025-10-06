@@ -1,2 +1,3 @@
 # uv
 export PATH="/Users/isaac/.local/bin:$PATH"
+. "$HOME/.cargo/env"
