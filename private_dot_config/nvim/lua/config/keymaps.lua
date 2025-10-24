@@ -4,10 +4,10 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- remap leader key
-keymap("n", "<Space>", "", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- remap leader key (moved to init.lua to prevent loading issues)
+-- keymap("n", "<Space>", "", opts)
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 
 -- remap kj and jk to esc
 keymap({ "o", "i" }, "kj", "<esc>", { noremap = true, silent = true, desc = "Esc" })
