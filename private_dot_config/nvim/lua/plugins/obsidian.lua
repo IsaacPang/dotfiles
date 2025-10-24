@@ -29,7 +29,7 @@ return {
       },
       {
         name = "personal",
-        path = vim.fn.expland("~/Documents/Obsidian/Personal"),
+        path = vim.fn.expand("~/Documents/Obsidian/Personal"),
       },
     },
 
