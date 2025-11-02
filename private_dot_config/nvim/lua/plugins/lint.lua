@@ -4,7 +4,10 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters = {
-        markdownlint = {
+        linters_by_ft = {
+          markdown = { "markdownlint" },
+        },
+        ["markdownlint-cli2"] = {
           args = { "--disable", "MD013", "--" },
         },
       },
