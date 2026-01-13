@@ -22,13 +22,10 @@ if [ $(arch) = "i386" ]; then
 
         plugins=(
             git
-            zsh-nvm
         )
 else
         plugins=(
             git
-            zsh-nvm
-            poetry
         )
 fi
 
@@ -126,6 +123,8 @@ export PATH="$PATH:/Users/ispang/.lmstudio/bin"
 # add go to PATH
 export PATH=$PATH:$HOME/go/bin
 
-# below commented to prevent startup lag
-# use node
-# nvm use node
+# Fast node manager
+# ensure installed via brew
+if command -v fnm >/dev/null 2>&1; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
