@@ -126,5 +126,6 @@ export PATH="$PATH:/Users/ispang/.lmstudio/bin"
 # add go to PATH
 export PATH=$PATH:$HOME/go/bin
 
+# below commented to prevent startup lag
 # use node
-nvm use node
+# nvm use node
