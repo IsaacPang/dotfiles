@@ -122,3 +122,9 @@ export PATH="$PATH:/Users/ispang/.lmstudio/bin"
 
 # add go to PATH
 export PATH=$PATH:$HOME/go/bin
+
+# Fast node manager
+# ensure installed via brew
+if command -v fnm >/dev/null 2>&1; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
