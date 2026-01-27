@@ -128,3 +128,10 @@ export PATH=$PATH:$HOME/go/bin
 if command -v fnm >/dev/null 2>&1; then
     eval "$(fnm env --use-on-cd --shell zsh)"
 fi
+
+# opencode
+export PATH=/Users/ispang/.opencode/bin:$PATH
+
+# opencode to work in the Deloitte office
+alias opencode="NODE_TLS_REJECT_UNAUTHORIZED=0 opencode"
+
