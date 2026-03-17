@@ -57,10 +57,10 @@ alias zshconfig="chezmoi edit ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 
 # User defined aliases
-# alias python="python3"
-# alias pip="pip3"
 alias now="date -Iseconds | sed 's/+.*$//'"
 alias tt="taskwarrior-tui"
+# alias yw="YARN_HTTPS_PROXY=http://serverproxy.au.deloitte.com:80 YARN_HTTP_PROXY=http://serverproxy.au.deloitte.com:80 YARN_HTTPS_CA_FILE_PATH=/Users/ispang/Downloads/zscaler_root_ca.pem yarn"
+alias yw="NODE_EXTRA_CA_CERTS=/Users/ispang/Downloads/zscaler_root_ca.pem yarn"
 
 ## Functions
 # ranger edit to close ranger to current folder on Q
