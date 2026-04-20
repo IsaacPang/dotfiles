@@ -6,6 +6,21 @@ return {
         pyright = {
           mason = false,
           autostart = false,
+          settings = {
+            python = {
+              pythonPath = function()
+                local cwd = vim.fn.getcwd()
+                local venv_path = cwd .. "/.venv/bin/python"
+                if vim.fn.filereadable(venv_path) == 1 then
+                  return venv_path
+                end
+                return "python3"
+              end,
+              analysis = {
+                typeCheckingMode = "basic", -- or "strict" if you prefer
+              },
+            },
+          },
         },
       },
     },
