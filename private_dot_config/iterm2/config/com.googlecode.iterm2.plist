@@ -1786,7 +1786,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>IosevkaNFM 14</string>
+			<string>IosevkaNFM-BoldItalic 16</string>
 			<key>Open Password Manager Automatically</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -2985,7 +2985,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>IosevkaNFM 14</string>
+			<string>IosevkaNFM-MediumItalic 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4186,7 +4186,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>IosevkaNFM 14</string>
+			<string>IosevkaNFM-MediumItalic 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prevent Opening in a Tab</key>
