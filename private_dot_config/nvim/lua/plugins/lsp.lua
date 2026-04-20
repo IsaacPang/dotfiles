@@ -5,7 +5,7 @@ return {
       servers = {
         pyright = {
           mason = false,
-          autostart = false,
+          autostart = true, -- enable automatic startup
           settings = {
             python = {
               pythonPath = function()
