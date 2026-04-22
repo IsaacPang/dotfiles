@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	opts = function()
+	opts = function(_, opts)
 		local function get_ruff_command()
 			local cwd = vim.fn.getcwd()
 			local ruff_path = cwd .. "/.venv/bin/ruff"
@@ -12,22 +12,20 @@ return {
 
 		local ruff_cmd = get_ruff_command()
 
-		return {
-			formatters_by_ft = {
-				python = { "ruff_fix", "ruff_format" },
+		opts.formatters_by_ft = vim.tbl_extend("force", opts.formatters_by_ft or {}, {
+			python = { "ruff_fix", "ruff_format" },
+		})
+		opts.formatters = vim.tbl_extend("force", opts.formatters or {}, {
+			ruff_fix = {
+				command = ruff_cmd,
+				args = { "check", "--fix", "--exit-zero", "-" },
+				stdin = true,
 			},
-			formatters = {
-				ruff_fix = {
-					command = ruff_cmd,
-					args = { "check", "--fix", "--exit-zero", "-" },
-					stdin = true,
-				},
-				ruff_format = {
-					command = ruff_cmd,
-					args = { "format", "-" },
-					stdin = true,
-				},
+			ruff_format = {
+				command = ruff_cmd,
+				args = { "format", "-" },
+				stdin = true,
 			},
-		}
+		})
 	end,
 }
